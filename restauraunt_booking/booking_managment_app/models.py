@@ -6,8 +6,11 @@ class Place(models.Model):
     '''
     The table's place 
     '''
-    number = models.IntegerChoices(min=1, max=150) # Table's number
+    number = models.IntegerField() # Table's number
     is_booked = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.number}"
 
 
 class Booking(models.Model):
